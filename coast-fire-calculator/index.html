@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coast FIRE Calculator – CalcClear</title>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Coast FIRE Calculator", "description": "Calculate your Coast FIRE number: the amount you need invested to coast to full retirement with zero additional savings.", "url": "https://calcclear.com/coast-fire-calculator/", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "No special requirements"}</script>
+  <meta name="description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
+  <link rel="canonical" href="https://calcclear.com/coast-fire-calculator/">
+  <meta property="og:title" content="Coast FIRE Calculator – CalcClear">
+  <meta property="og:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Coast FIRE Calculator – CalcClear">
+  <meta name="twitter:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
+<div class="page-content">
+    <h1 class="page-h1">Coast FIRE Calculator</h1>
+    <div class="intro-box"><p>The point where your investments will reach your full retirement target — with zero additional contributions from you.</p></div>
+
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="form-row form-row-2">
+          <div><label>Current Age</label><input type="number" id="current-age" value="30" min="18" max="80"></div>
+          <div><label>Target Retirement Age</label><input type="number" id="retire-age" value="65" min="30" max="90"></div>
+        </div>
+        <div class="form-row form-row-2">
+          <div><label>Annual Expenses in Retirement ($)</label><input type="number" id="annual-expenses" value="50000" min="1000"></div>
+          <div><label>Safe Withdrawal Rate (%)</label><input type="number" id="safe-rate" value="4" min="1" max="10" step="0.1"></div>
+        </div>
+        <div class="form-row form-row-2">
+          <div><label>Expected Annual Return (%)</label><input type="number" id="return-rate" value="7" min="1" max="15" step="0.1"></div>
+          <div><label>Current Savings ($)</label><input type="number" id="current-savings" value="50000" min="0"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result">
+      <div class="result-box">
+        <h4>Your Coast FIRE Number</h4>
+        <div class="result-big" id="coast-number">$310,286</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-val" id="retire-number">$1,250,000</div><div class="stat-lbl">Full FIRE Target</div></div>
+        <div class="stat"><div class="stat-val" id="gap-num">$260,286</div><div class="stat-lbl">Gap</div></div>
+        <div class="stat"><div class="stat-val" id="coast-age">44</div><div class="stat-lbl">Coast Age</div></div>
+        <div class="stat"><div class="stat-val" id="years-left">35</div><div class="stat-lbl">Years to Retire</div></div>
+      </div>
+      <div class="result-box">
+        <h4>Status</h4>
+        <div class="result-big" id="status-text" style="font-size:18px;">Keep going — you've got ground to cover</div>
+      </div>
+    </div>
+
+    <div class="ad-slot"><p>Advertisement</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+    <h2 class="section-h2">How it works</h2>
+    <p class="section-p">The math is straightforward. Your Coast FIRE number is the amount you need invested today so that it grows to your full retirement target by your planned retirement age — with no further contributions.</p>
+    <div class="formula">Coast FIRE Number = Full FIRE Target ÷ (1 + r)<sup>years-to-retirement</sup></div>
+    <p class="section-p">Example: $1,250,000 ÷ 1.07<sup>35</sup> = $310,286. At that amount, compound growth alone carries you the rest of the way.</p>
+
+    <div class="callout callout-blue">
+      <h4>Social Security is not included</h4>
+      <p>This calculator uses your full annual expenses. If you expect Social Security income, your actual portfolio target may be lower. Check your estimate at ssa.gov/my-account.</p>
+    </div>
+
+    <div class="cards-grid">
+      <a href="https://coastfirewhen.com/coast-fire-calculator-explained.html" class="mini-card">Coast FIRE Guide →</a>
+      <a href="https://coastfirewhen.com/fire-progress-tracker.html" class="mini-card">FIRE Progress Tracker →</a>
+      <a href="https://coastfirewhen.com/safe-withdrawal-rate-guide.html" class="mini-card">Withdrawal Rate →</a>
+    </div>
+    <p class="disclaimer">For educational purposes only. Assumes constant returns, no Social Security income. Not financial advice.</p>
+  </div>
+  <script>
+    const el=id=>document.getElementById(id);
+    const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+    function calc(){
+      const age=+el('current-age').value||30;
+      const retireAge=+el('retire-age').value||65;
+      const expenses=+el('annual-expenses').value||50000;
+      const swr=(+el('safe-rate').value||4)/100;
+      const r=(+el('return-rate').value||7)/100;
+      const savings=+el('current-savings').value||0;
+      const retireTarget=expenses/swr;
+      const yearsToRetire=retireAge-age;
+      const coastNumber=retireTarget/Math.pow(1+r,yearsToRetire);
+      const gap=Math.max(0,coastNumber-savings);
+      let coastAge=age;
+      if(savings>0&&coastNumber>savings){coastAge=age+Math.ceil(Math.log(coastNumber/savings)/Math.log(1+r));}
+      else if(savings>=coastNumber){coastAge=age;}
+      el('coast-number').textContent=fmt(coastNumber);
+      el('retire-number').textContent=fmt(retireTarget);
+      el('gap-num').textContent=fmt(gap);
+      el('coast-age').textContent=Math.min(coastAge,retireAge);
+      el('years-left').textContent=yearsToRetire;
+      const statusEl=el('status-text');
+      if(gap<=0){statusEl.textContent="You've reached Coast FIRE!";statusEl.className="result-big green";}
+      else if(gap<coastNumber*0.25){statusEl.textContent="Close — keep pushing";statusEl.className="result-big";}
+      else{statusEl.textContent="Keep saving — ground to cover";statusEl.className="result-big";}
+    }
+    ['current-age','retire-age','annual-expenses','safe-rate','return-rate','current-savings'].forEach(id=>el(id).addEventListener('input',calc));
+    calc();
+  </script>
+<meta property="og:title" content="Coast FIRE Calculator – CalcClear">
+<meta property="og:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coast FIRE Calculator – CalcClear">
+<meta name="twitter:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;510;590&display=swap');
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--bg:#08090a;--bg-panel:#0f1011;--bg-surface:#191a1b;--bg-hover:#28282c;--text-primary:#f7f8f8;--text-secondary:#d0d6e0;--text-tertiary:#8a8f98;--text-muted:#62666d;--accent:#5e6ad2;--accent-hover:#7170ff;--accent-light:#828fff;--success:#10b981;--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--border-solid:#23252a;--font:'Inter',system-ui,sans-serif;}
+    html{font-family:var(--font);background:var(--bg);color:var(--text-primary);font-size:16px;-webkit-font-smoothing:antialiased;}
+    body{min-height:100vh;}a{color:inherit;text-decoration:none;}::selection{background:var(--accent);color:#fff;}
+    nav{position:sticky;top:0;z-index:100;background:rgba(8,9,10,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-subtle);}
+    .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-size:15px;font-weight:510;letter-spacing:-0.01em;color:var(--text-secondary);}
+    .nav-logo span{color:var(--text-primary);}
+    .nav-links{display:flex;align-items:center;gap:2px;}
+    .nav-links a{font-size:14px;font-weight:510;color:var(--text-tertiary);padding:6px 10px;border-radius:6px;transition:background .15s,color .15s;}
+    .nav-links a:hover{background:rgba(255,255,255,0.04);color:var(--text-secondary);}
+    .page-content{max-width:720px;margin:0 auto;padding:40px 24px 80px;}
+    .page-h1{font-size:32px;font-weight:510;letter-spacing:-.025em;color:var(--text-primary);margin-bottom:12px;line-height:1.1;}
+    .intro-box{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:20px 0 28px;}
+    .intro-box p{font-size:16px;font-weight:300;line-height:1.65;color:var(--text-secondary);margin:0;}
+    label{display:block;font-size:13px;font-weight:510;color:var(--text-tertiary);margin-bottom:6px;letter-spacing:.01em;}
+    input[type="number"]{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text-primary);font-size:15px;font-family:var(--font);outline:none;transition:border-color .15s;}
+    input[type="number"]:focus{border-color:var(--accent);}input[type="number"]::placeholder{color:var(--text-muted);}
+    .form-grid{display:grid;gap:16px;}
+    .form-row{display:grid;gap:12px;}
+    .form-row-2{grid-template-columns:1fr 1fr;}.form-row-3{grid-template-columns:1fr 1fr 1fr;}
+    @media(max-width:600px){.form-row-2,.form-row-3{grid-template-columns:1fr;}}
+    .calc-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:26px;margin:24px 0;}
+    .calc-card h2{font-size:16px;font-weight:590;color:var(--text-primary);margin-bottom:16px;letter-spacing:-.01em;}
+    .result-box{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:14px 0;}
+    .result-box h4{font-size:12px;font-weight:510;color:var(--text-tertiary);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em;}
+    .result-big{font-size:26px;font-weight:590;color:var(--text-primary);letter-spacing:-.02em;}
+    .result-big.green{color:var(--success);}.result-big.orange{color:#f97316;}
+    .result-big.red{color:#f87171;}
+    .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px;}
+    .stat{text-align:center;padding:11px 8px;background:rgba(255,255,255,0.02);border-radius:6px;}
+    .stat-val{font-size:17px;font-weight:590;color:var(--text-primary);}.stat-lbl{font-size:11px;color:var(--text-muted);margin-top:2px;}
+    .callout{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:18px 22px;margin:24px 0;}
+    .callout-amber{border-color:rgba(251,191,36,.18);background:rgba(251,191,36,.04);}
+    .callout-blue{border-color:rgba(96,165,250,.18);background:rgba(96,165,250,.04);}
+    .callout-green{border-color:rgba(16,185,129,.18);background:rgba(16,185,129,.04);}
+    .callout h4{font-size:13px;font-weight:590;margin-bottom:5px;}
+    .callout-amber h4{color:#fbbf24;}.callout-blue h4{color:#60a5fa;}.callout-green h4{color:var(--success);}
+    .callout p{font-size:14px;font-weight:300;color:var(--text-tertiary);margin:0;}
+    .formula{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:6px;padding:14px 18px;font-family:ui-monospace,monospace;font-size:13px;color:var(--text-secondary);margin:14px 0;line-height:1.7;}
+    .section-h2{font-size:20px;font-weight:510;letter-spacing:-.015em;color:var(--text-primary);margin:36px 0 12px;}
+    .section-p{font-size:15px;font-weight:300;line-height:1.75;color:var(--text-tertiary);margin-bottom:12px;}
+    .section-p code{background:rgba(255,255,255,0.05);padding:1px 5px;border-radius:3px;color:var(--accent-light);}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:20px;}
+    .mini-card{display:block;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-size:14px;font-weight:510;color:var(--text-tertiary);transition:border-color .15s,color .15s;}
+    .mini-card:hover{border-color:rgba(255,255,255,0.13);color:var(--text-secondary);}
+    footer{border-top:1px solid var(--border-subtle);padding:36px 24px;text-align:center;}
+    footer p{font-size:13px;color:var(--text-muted);}
+    .footer-links{display:flex;justify-content:center;gap:20px;margin-top:12px;}
+    .footer-links a{font-size:13px;color:var(--text-muted);}.footer-links a:hover{color:var(--text-tertiary);}
+    .disclaimer{font-size:13px;font-weight:300;color:var(--text-muted);font-style:italic;margin-top:32px;padding-top:20px;border-top:1px solid var(--border-subtle);}
+    .hidden{display:none;}
+    .section-title{font-size:12px;font-weight:510;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+    .tab-row{display:flex;gap:6px;margin-bottom:20px;}
+    .tab-btn{flex:1;padding:8px 12px;border-radius:6px;font-size:13px;font-weight:510;color:var(--text-tertiary);background:rgba(255,255,255,0.02);border:1px solid var(--border);cursor:pointer;transition:all .15s;text-align:center;}
+    .tab-btn:hover{background:rgba(255,255,255,0.05);color:var(--text-secondary);}
+    .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+    .progress-wrap{margin:14px 0;}
+    .progress-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--text-tertiary);margin-bottom:7px;}
+    .progress-bar{height:5px;background:var(--bg-surface);border-radius:999px;overflow:hidden;}
+    .progress-fill{height:100%;border-radius:999px;background:var(--accent);transition:width .4s ease;}
+    .progress-fill.green{background:var(--success);}.progress-fill.orange{background:#f97316;}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:6px;font-size:14px;font-weight:510;cursor:pointer;transition:all .15s;border:none;}
+    .btn-primary{background:var(--accent);color:#fff;}.btn-primary:hover{background:var(--accent-hover);color:#fff;}
+    .btn-ghost{background:rgba(255,255,255,0.03);color:var(--text-secondary);border:1px solid var(--border);}.btn-ghost:hover{background:rgba(255,255,255,0.07);color:var(--text-primary);}
+    .ad-slot{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:16px;margin:24px 0;text-align:center;}
+    .ad-slot p{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
+  </style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="nav-logo">Calc<span>Clear</span></a><div class="nav-links"><a href="/">All Calculators</a></div></div></nav>
+  
+<footer><p>© 2025 CalcClear.com — Educational use only. Not financial advice.</p><div class="footer-links"><a href="https://coastfirewhen.com/privacy-policy.html">Privacy Policy</a><a href="https://coastfirewhen.com/terms.html">Terms</a></div></footer>
+</body>
+</html>
