@@ -101,8 +101,8 @@
       <h2>Loan Details</h2>
       <div class="form-grid">
         <div class="form-row form-row-2">
-          <div><label>Purchase Price ($)</label><input type="number" id="ll-price" value="100000" min="1000"></div>
-          <div><label>Down Payment ($)</label><input type="number" id="ll-down" value="20000" min="0"></div>
+          <div><label>Purchase Price ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="ll-price" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="100000" min="1000"></div>
+          <div><label>Down Payment ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="ll-down" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="20000" min="0"></div>
         </div>
         <div class="form-row form-row-3">
           <div><label>Annual Interest Rate (%)</label><input type="number" id="ll-rate" value="7.5" min="0.1" max="25" step="0.1"></div>
@@ -153,9 +153,13 @@
   <script>
     const el=id=>document.getElementById(id);
     const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
-    function calc(){
-      const price=+el('ll-price').value||100000;
-      const down=+el('ll-down').value||0;
+    
+  
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function calc(){
+      const price=fmtNums(el("ll-price").value)||100000;
+      const down=fmtNums(el("ll-down").value)||0;
       const rate=(+el('ll-rate').value||7.5)/100;
       const term=+el('ll-term').value||5;
       const balloonYear=Math.min(+el('ll-balloon').value||5,term);

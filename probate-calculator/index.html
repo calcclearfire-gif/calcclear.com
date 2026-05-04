@@ -101,7 +101,7 @@
       <h2>Estate Details</h2>
       <div class="form-grid">
         <div class="form-row form-row-2">
-          <div><label>Gross Estate Value ($)</label><input type="number" id="p-estate" value="500000" min="0"></div>
+          <div><label>Gross Estate Value ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-estate" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="500000" min="0"></div>
           <div><label>State</label>
             <select id="p-state" style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
               <option value="CA">California</option>
@@ -223,8 +223,12 @@
   <script>
     const el=id=>document.getElementById(id);
     const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
-    function calc(){
-      const estate=+el('p-estate').value||0;
+    
+  
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function calc(){
+      const estate=fmtNums(el("p-estate").value)||0;
       const will=el('p-will').value;
       const adminType=el('p-type').value;
       const state=el('p-state').value;

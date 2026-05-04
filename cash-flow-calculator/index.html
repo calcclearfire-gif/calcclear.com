@@ -107,12 +107,12 @@
         <h2>Monthly Income</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Salary / Primary Income</label><input type="number" id="p-salary" value="6000" min="0"></div>
-            <div><label>Side Income / Freelance</label><input type="number" id="p-side" value="0" min="0"></div>
+            <div><label>Salary / Primary Income</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-salary" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="6000" min="0"></div>
+            <div><label>Side Income / Freelance</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-side" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Passive Income (dividends, rental)</label><input type="number" id="p-passive" value="0" min="0"></div>
-            <div><label>Other Income</label><input type="number" id="p-other-inc" value="0" min="0"></div>
+            <div><label>Passive Income (dividends, rental)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-passive" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
+            <div><label>Other Income</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-other-inc" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
           </div>
         </div>
       </div>
@@ -120,20 +120,20 @@
         <h2>Monthly Expenses</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Housing (rent / mortgage)</label><input type="number" id="p-housing" value="1800" min="0"></div>
-            <div><label>Utilities (electric, gas, internet)</label><input type="number" id="p-utilities" value="200" min="0"></div>
+            <div><label>Housing (rent / mortgage)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-housing" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="1800" min="0"></div>
+            <div><label>Utilities (electric, gas, internet)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-utilities" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="200" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Groceries & Dining</label><input type="number" id="p-groceries" value="600" min="0"></div>
-            <div><label>Transportation</label><input type="number" id="p-transport" value="500" min="0"></div>
+            <div><label>Groceries & Dining</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-groceries" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="600" min="0"></div>
+            <div><label>Transportation</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-transport" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="500" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Insurance (health, auto, life)</label><input type="number" id="p-insurance" value="300" min="0"></div>
-            <div><label>Debt Payments (student, car)</label><input type="number" id="p-debt" value="400" min="0"></div>
+            <div><label>Insurance (health, auto, life)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-insurance" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="300" min="0"></div>
+            <div><label>Debt Payments (student, car)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-debt" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="400" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Subscriptions (streaming, apps)</label><input type="number" id="p-subs" value="150" min="0"></div>
-            <div><label>Other Expenses</label><input type="number" id="p-other-exp" value="200" min="0"></div>
+            <div><label>Subscriptions (streaming, apps)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-subs" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="150" min="0"></div>
+            <div><label>Other Expenses</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="p-other-exp" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="200" min="0"></div>
           </div>
         </div>
       </div>
@@ -145,8 +145,8 @@
         <h2>Monthly Business Income</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Total Revenue / Sales</label><input type="number" id="b-revenue" value="25000" min="0"></div>
-            <div><label>Other Business Income</label><input type="number" id="b-other-inc" value="0" min="0"></div>
+            <div><label>Total Revenue / Sales</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-revenue" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="25000" min="0"></div>
+            <div><label>Other Business Income</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-other-inc" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
           </div>
         </div>
       </div>
@@ -154,20 +154,20 @@
         <h2>Monthly Business Expenses</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Cost of Goods Sold (COGS)</label><input type="number" id="b-cogs" value="10000" min="0"></div>
-            <div><label>Payroll / Wages</label><input type="number" id="b-payroll" value="5000" min="0"></div>
+            <div><label>Cost of Goods Sold (COGS)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-cogs" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="10000" min="0"></div>
+            <div><label>Payroll / Wages</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-payroll" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="5000" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Office / Workspace Rent</label><input type="number" id="b-rent" value="1500" min="0"></div>
-            <div><label>Marketing & Advertising</label><input type="number" id="b-marketing" value="1000" min="0"></div>
+            <div><label>Office / Workspace Rent</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-rent" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="1500" min="0"></div>
+            <div><label>Marketing & Advertising</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-marketing" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="1000" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Software & Subscriptions</label><input type="number" id="b-software" value="500" min="0"></div>
-            <div><label>Utilities & Operations</label><input type="number" id="b-utilities" value="300" min="0"></div>
+            <div><label>Software & Subscriptions</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-software" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="500" min="0"></div>
+            <div><label>Utilities & Operations</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-utilities" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="300" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Taxes & Licenses</label><input type="number" id="b-taxes" value="1000" min="0"></div>
-            <div><label>Other Expenses</label><input type="number" id="b-other-exp" value="500" min="0"></div>
+            <div><label>Taxes & Licenses</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-taxes" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="1000" min="0"></div>
+            <div><label>Other Expenses</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="b-other-exp" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="500" min="0"></div>
           </div>
         </div>
       </div>
@@ -179,8 +179,8 @@
         <h2>Rental Income</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Monthly Rent Received</label><input type="number" id="r-rent" value="2000" min="0"></div>
-            <div><label>Other Income (laundry, parking)</label><input type="number" id="r-other-inc" value="0" min="0"></div>
+            <div><label>Monthly Rent Received</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-rent" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="2000" min="0"></div>
+            <div><label>Other Income (laundry, parking)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-other-inc" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
           </div>
         </div>
       </div>
@@ -188,20 +188,20 @@
         <h2>Monthly Expenses</h2>
         <div class="form-grid">
           <div class="form-row form-row-2">
-            <div><label>Mortgage Payment (P&I)</label><input type="number" id="r-mortgage" value="1200" min="0"></div>
-            <div><label>Property Tax (monthly portion)</label><input type="number" id="r-tax" value="200" min="0"></div>
+            <div><label>Mortgage Payment (P&I)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-mortgage" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="1200" min="0"></div>
+            <div><label>Property Tax (monthly portion)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-tax" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="200" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Property Insurance</label><input type="number" id="r-insurance" value="150" min="0"></div>
-            <div><label>HOA Fees</label><input type="number" id="r-hoa" value="0" min="0"></div>
+            <div><label>Property Insurance</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-insurance" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="150" min="0"></div>
+            <div><label>HOA Fees</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-hoa" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Maintenance & Repairs</label><input type="number" id="r-maintenance" value="150" min="0"></div>
-            <div><label>Vacancy Allowance</label><input type="number" id="r-vacancy" value="100" min="0"></div>
+            <div><label>Maintenance & Repairs</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-maintenance" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="150" min="0"></div>
+            <div><label>Vacancy Allowance</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-vacancy" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="100" min="0"></div>
           </div>
           <div class="form-row form-row-2">
-            <div><label>Property Management Fee</label><input type="number" id="r-pm" value="0" min="0"></div>
-            <div><label>Other Expenses</label><input type="number" id="r-other-exp" value="50" min="0"></div>
+            <div><label>Property Management Fee</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-pm" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="0" min="0"></div>
+            <div><label>Other Expenses</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="r-other-exp" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="50" min="0"></div>
           </div>
         </div>
       </div>
@@ -245,7 +245,11 @@
     const rInc=['r-rent','r-other-inc'];
     const rExp=['r-mortgage','r-tax','r-insurance','r-hoa','r-maintenance','r-vacancy','r-pm','r-other-exp'];
     const sum=ids=>ids.reduce((a,id)=>a+(+(el(id)?.value||0)),0);
-    function calc(){
+    
+  
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+function calc(){
       const mode=document.querySelector('.tab-btn.active')?.textContent.trim().toLowerCase();
       let income=0,expenses=0;
       if(mode.startsWith('personal')){income=sum(pInc);expenses=sum(pExp);}
