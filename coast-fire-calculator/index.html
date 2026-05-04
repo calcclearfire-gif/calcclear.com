@@ -24,12 +24,12 @@
 <div><label>Target Retirement Age</label><input id="retire-age" max="90" min="30" type="number" value="65"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Annual Expenses in Retirement ($)</label><input autocomplete="off" id="annual-expenses" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="50000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
+<div><label>Annual Expenses in Retirement ($)</label><input autocomplete="off" id="annual-expenses" min="1000" value="50000" type="number"/></div>
 <div><label>Safe Withdrawal Rate (%)</label><input id="safe-rate" max="10" min="1" step="0.1" type="number" value="4"/></div>
 </div>
 <div class="form-row form-row-2">
 <div><label>Expected Annual Return (%)</label><input id="return-rate" max="15" min="1" step="0.1" type="number" value="7"/></div>
-<div><label>Current Savings ($)</label><input autocomplete="off" id="current-savings" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="50000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
+<div><label>Current Savings ($)</label><input autocomplete="off" id="current-savings" min="0" value="50000" type="number"/></div>
 </div>
 </div>
 </div>
@@ -70,15 +70,15 @@
     const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
     
   
-  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
-function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
+  
+
 function calc(){
       const age=+el('current-age').value||30;
       const retireAge=+el('retire-age').value||65;
-      const expenses=fmtNums(el("annual-expenses").value)||50000;
+      const expenses=el("annual-expenses").valueAsNumber||50000;
       const swr=(+el('safe-rate').value||4)/100;
       const r=(+el('return-rate').value||7)/100;
-      const savings=fmtNums(el("current-savings").value)||0;
+      const savings=el("current-savings").valueAsNumber||0;
       const retireTarget=expenses/swr;
       const yearsToRetire=retireAge-age;
       const coastNumber=retireTarget/Math.pow(1+r,yearsToRetire);
