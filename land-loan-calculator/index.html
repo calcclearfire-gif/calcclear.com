@@ -1,26 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Land Loan Calculator – CalcClear</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Land Loan Calculator", "description": "Calculate monthly payments for land loans including balloon payments, and compare purchase vs. finance scenarios.", "url": "https://calcclear.com/land-loan-calculator/", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "No special requirements"}</script>
-  <meta name="description" content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing.">
-  <link rel="canonical" href="https://calcclear.com/land-loan-calculator/">
-  <meta property="og:title" content="Land Loan Calculator – CalcClear">
-  <meta property="og:description" content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Land Loan Calculator – CalcClear">
-  <meta name="twitter:description" content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing.">
-  
-<meta property="og:title" content="Land Loan Calculator – CalcClear">
-<meta property="og:description" content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Land Loan Calculator – CalcClear">
-<meta name="twitter:description" content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing.">
-  <style>
+<meta content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing." name="description"/>
+<link href="https://calcclear.com/land-loan-calculator/" rel="canonical"/>
+<meta content="Land Loan Calculator – CalcClear" property="og:title"/>
+<meta content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Land Loan Calculator – CalcClear" name="twitter:title"/>
+<meta content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing." name="twitter:description"/>
+<meta content="Land Loan Calculator – CalcClear" property="og:title"/>
+<meta content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Land Loan Calculator – CalcClear" name="twitter:title"/>
+<meta content="Calculate monthly payments for land loans including balloon payments, and compare buying outright vs. financing." name="twitter:description"/>
+<style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;510;590&display=swap');
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{--bg:#08090a;--bg-panel:#0f1011;--bg-surface:#191a1b;--bg-hover:#28282c;--text-primary:#f7f8f8;--text-secondary:#d0d6e0;--text-tertiary:#8a8f98;--text-muted:#62666d;--accent:#5e6ad2;--accent-hover:#7170ff;--accent-light:#828fff;--success:#10b981;--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--border-solid:#23252a;--font:'Inter',system-ui,sans-serif;}
@@ -32,7 +32,7 @@
     .nav-links{display:flex;align-items:center;gap:2px;}
     .nav-links a{font-size:14px;font-weight:510;color:var(--text-tertiary);padding:6px 10px;border-radius:6px;transition:background .15s,color .15s;}
     .nav-links a:hover{background:rgba(255,255,255,0.04);color:var(--text-secondary);}
-    .page-content{max-width:720px;margin:0 auto;padding:40px 24px 80px;}
+    
     .page-h1{font-size:32px;font-weight:510;letter-spacing:-.025em;color:var(--text-primary);margin-bottom:12px;line-height:1.1;}
     .intro-box{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:20px 0 28px;}
     .intro-box p{font-size:16px;font-weight:300;line-height:1.65;color:var(--text-secondary);margin:0;}
@@ -82,75 +82,69 @@
     .progress-bar{height:5px;background:var(--bg-surface);border-radius:999px;overflow:hidden;}
     .progress-fill{height:100%;border-radius:999px;background:var(--accent);transition:width .4s ease;}
     .progress-fill.green{background:var(--success);}.progress-fill.orange{background:#f97316;}
-    .ad-slot{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:16px;margin:24px 0;text-align:center;}
+    
     .ad-slot p{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
     .comparison-table{width:100%;border-collapse:collapse;margin:14px 0;}
     .comparison-table th{font-size:12px;font-weight:510;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);}
     .comparison-table td{padding:10px 12px;font-size:14px;color:var(--text-secondary);border-bottom:1px solid var(--border-subtle);}
     .comparison-table tr:last-child td{border-bottom:none;}
     .comparison-table td:last-child{text-align:right;font-weight:510;}
-  </style>
+    .ad-slot{min-height:600px}
+    .page-wrapper{display:flex;gap:32px;align-items:flex-start;max-width:960px;margin:0 auto;padding:40px 24px 80px}.ad-sidebar{width:160px;flex-shrink:0;position:sticky;top:72px}@media(max-width:900px){.page-wrapper{display:block;padding:40px 24px 80px}.ad-sidebar{width:100%;position:static;margin-top:32px}}
+    .page-content{flex:1;min-width:0}</style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/" class="nav-logo">Calc<span>Clear</span></a><div class="nav-links"><a href="/">All Calculators</a></div></div></nav>
-<div class="page-content">
-    <h1 class="page-h1">Land Loan Calculator</h1>
-    <div class="intro-box"><p>Raw land is harder to finance than a house — loans are typically shorter term, higher rates, and often come with a balloon payment. This calculator handles both standard amortizing loans and balloon structures.</p></div>
+<nav><div class="nav-inner"><a class="nav-logo" href="/">Calc<span>Clear</span></a><div class="nav-links"><a href="/">All Calculators</a></div></div></nav>
+<div class="page-wrapper"><div class="page-content">
+<h1 class="page-h1">Land Loan Calculator</h1>
+<div class="intro-box"><p>Raw land is harder to finance than a house — loans are typically shorter term, higher rates, and often come with a balloon payment. This calculator handles both standard amortizing loans and balloon structures.</p></div>
+<div class="calc-card">
+<h2>Loan Details</h2>
+<div class="form-grid">
+<div class="form-row form-row-2">
+<div><label>Purchase Price ($)</label><input autocomplete="off" id="ll-price" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="100000"/></div>
+<div><label>Down Payment ($)</label><input autocomplete="off" id="ll-down" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="20000"/></div>
+</div>
+<div class="form-row form-row-3">
+<div><label>Annual Interest Rate (%)</label><input id="ll-rate" max="25" min="0.1" step="0.1" type="number" value="7.5"/></div>
+<div><label>Loan Term (years)</label><input id="ll-term" max="30" min="1" type="number" value="5"/></div>
+<div><label>Balloon Due After (years)</label><input id="ll-balloon" max="30" min="1" type="number" value="5"/></div>
+</div>
+</div>
+</div>
+<div class="calc-card">
+<h2>Results</h2>
+<div class="stats-row">
+<div class="stat"><div class="stat-val" id="ll-monthly">$0</div><div class="stat-lbl">Monthly Payment</div></div>
+<div class="stat"><div class="stat-val" id="ll-total-interest">$0</div><div class="stat-lbl">Total Interest</div></div>
+<div class="stat"><div class="stat-val" id="ll-balloon-amt">$0</div><div class="stat-lbl">Balloon Payment</div></div>
+<div class="stat"><div class="stat-val" id="ll-total-cost">$0</div><div class="stat-lbl">Total Cost</div></div>
+</div>
+<div class="result-box">
+<h4>Buy vs. Finance Comparison</h4>
+<p class="section-p" id="ll-summary" style="margin:0;">Enter loan details above.</p>
+</div>
+</div>
 
-    <div class="calc-card">
-      <h2>Loan Details</h2>
-      <div class="form-grid">
-        <div class="form-row form-row-2">
-          <div><label>Purchase Price ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="ll-price" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="100000" min="1000"></div>
-          <div><label>Down Payment ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="ll-down" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="20000" min="0"></div>
-        </div>
-        <div class="form-row form-row-3">
-          <div><label>Annual Interest Rate (%)</label><input type="number" id="ll-rate" value="7.5" min="0.1" max="25" step="0.1"></div>
-          <div><label>Loan Term (years)</label><input type="number" id="ll-term" value="5" min="1" max="30"></div>
-          <div><label>Balloon Due After (years)</label><input type="number" id="ll-balloon" value="5" min="1" max="30"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-card">
-      <h2>Results</h2>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val" id="ll-monthly">$0</div><div class="stat-lbl">Monthly Payment</div></div>
-        <div class="stat"><div class="stat-val" id="ll-total-interest">$0</div><div class="stat-lbl">Total Interest</div></div>
-        <div class="stat"><div class="stat-val" id="ll-balloon-amt">$0</div><div class="stat-lbl">Balloon Payment</div></div>
-        <div class="stat"><div class="stat-val" id="ll-total-cost">$0</div><div class="stat-lbl">Total Cost</div></div>
-      </div>
-      <div class="result-box">
-        <h4>Buy vs. Finance Comparison</h4>
-        <p class="section-p" id="ll-summary" style="margin:0;">Enter loan details above.</p>
-      </div>
-    </div>
-
-    <div class="ad-slot"><p>Advertisement</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
-
-    <h2 class="section-h2">Why land loans are different</h2>
-    <p class="section-p">Most lenders treat raw land as higher risk than improved property. As a result, expect shorter loan terms (5–15 years), higher down payments (20–50%), and rates 1–4% higher than conventional mortgages.</p>
-    <p class="section-p">The balloon payment structure is common: you pay interest-only or low amortizing payments for a set period, then the remaining balance is due in full. If you can't refi or sell, you risk default.</p>
-    <div class="formula">Monthly Payment (standard amortizing) = P × [r(1+r)<sup>n</sup>] ÷ [(1+r)<sup>n</sup> − 1]<br>Balloon = Original Loan Amount − Amount Paid Off by Year N</div>
-
-    <div class="callout callout-amber">
-      <h4>Balloon payment risk</h4>
-      <p>If you can't refinance or sell before the balloon is due, you could be forced into a difficult position. Factor this into your exit strategy before taking a balloon structure.</p>
-    </div>
-
-
-    <div class="callout callout-blue">
-      <h4>If you plan to build: compare construction loans</h4>
-      <p>Construction-to-permanent loans typically have lower rates than raw land loans. You finance the build, then roll into a standard mortgage — one loan, one closing. If your plan involves a house eventually, this path usually pencils out better.</p>
-    </div>
-
-    <div class="cards-grid">
-      <a href="https://coastfirewhen.com/" class="mini-card">FIRE Tools →</a>
-      <a href="https://coastfirewhen.com/compound-interest-explained.html" class="mini-card">Compound Interest →</a>
-    </div>
-    <p class="disclaimer">For educational purposes only. Not financial or legal advice.</p>
-  </div>
-  <script>
+<h2 class="section-h2">Why land loans are different</h2>
+<p class="section-p">Most lenders treat raw land as higher risk than improved property. As a result, expect shorter loan terms (5–15 years), higher down payments (20–50%), and rates 1–4% higher than conventional mortgages.</p>
+<p class="section-p">The balloon payment structure is common: you pay interest-only or low amortizing payments for a set period, then the remaining balance is due in full. If you can't refi or sell, you risk default.</p>
+<div class="formula">Monthly Payment (standard amortizing) = P × [r(1+r)<sup>n</sup>] ÷ [(1+r)<sup>n</sup> − 1]<br/>Balloon = Original Loan Amount − Amount Paid Off by Year N</div>
+<div class="callout callout-amber">
+<h4>Balloon payment risk</h4>
+<p>If you can't refinance or sell before the balloon is due, you could be forced into a difficult position. Factor this into your exit strategy before taking a balloon structure.</p>
+</div>
+<div class="callout callout-blue">
+<h4>If you plan to build: compare construction loans</h4>
+<p>Construction-to-permanent loans typically have lower rates than raw land loans. You finance the build, then roll into a standard mortgage — one loan, one closing. If your plan involves a house eventually, this path usually pencils out better.</p>
+</div>
+<div class="cards-grid">
+<a class="mini-card" href="https://coastfirewhen.com/">FIRE Tools →</a>
+<a class="mini-card" href="https://coastfirewhen.com/compound-interest-explained.html">Compound Interest →</a>
+</div>
+<p class="disclaimer">For educational purposes only. Not financial or legal advice.</p>
+</div><div class="ad-sidebar"><div class="ad-slot"><ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-format="auto" data-ad-slot="XXXXXXXXXX" data-full-width-responsive="true" style="display:block"></ins></div></div></div>
+<script>
     const el=id=>document.getElementById(id);
     const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
     
@@ -182,6 +176,6 @@ function calc(){
     ['ll-price','ll-down','ll-rate','ll-term','ll-balloon'].forEach(id=>el(id).addEventListener('input',calc));
     calc();
   </script>
-<footer><p>© 2025 CalcClear.com — Educational use only. Not financial advice.</p><div class="footer-links"><a href="https://coastfirewhen.com/privacy-policy.html">Privacy Policy</a><a href="https://coastfirewhen.com/terms.html">Terms</a></div></footer>
+<footer><p>© 2026 CalcClear.com — Educational use only. Not financial advice.</p><div class="footer-links"><a href="https://coastfirewhen.com/privacy-policy.html">Privacy Policy</a><a href="https://coastfirewhen.com/terms.html">Terms</a></div></footer>
 </body>
 </html>

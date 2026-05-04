@@ -1,76 +1,71 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Coast FIRE Calculator – CalcClear</title>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Coast FIRE Calculator", "description": "Calculate your Coast FIRE number: the amount you need invested to coast to full retirement with zero additional savings.", "url": "https://calcclear.com/coast-fire-calculator/", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "browserRequirements": "No special requirements"}</script>
-  <meta name="description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
-  <link rel="canonical" href="https://calcclear.com/coast-fire-calculator/">
-  <meta property="og:title" content="Coast FIRE Calculator – CalcClear">
-  <meta property="og:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Coast FIRE Calculator – CalcClear">
-  <meta name="twitter:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
-<div class="page-content">
-    <h1 class="page-h1">Coast FIRE Calculator</h1>
-    <div class="intro-box"><p>The point where your investments will reach your full retirement target — with zero additional contributions from you.</p></div>
+<meta content="Find the exact amount you need invested to coast to full retirement with zero additional savings." name="description"/>
+<link href="https://calcclear.com/coast-fire-calculator/" rel="canonical"/>
+<meta content="Coast FIRE Calculator – CalcClear" property="og:title"/>
+<meta content="Find the exact amount you need invested to coast to full retirement with zero additional savings." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Coast FIRE Calculator – CalcClear" name="twitter:title"/>
+<meta content="Find the exact amount you need invested to coast to full retirement with zero additional savings." name="twitter:description"/>
+<div class="page-wrapper"><div class="page-content">
+<h1 class="page-h1">Coast FIRE Calculator</h1>
+<div class="intro-box"><p>The point where your investments will reach your full retirement target — with zero additional contributions from you.</p></div>
+<div class="calc-card">
+<div class="form-grid">
+<div class="form-row form-row-2">
+<div><label>Current Age</label><input id="current-age" max="80" min="18" type="number" value="30"/></div>
+<div><label>Target Retirement Age</label><input id="retire-age" max="90" min="30" type="number" value="65"/></div>
+</div>
+<div class="form-row form-row-2">
+<div><label>Annual Expenses in Retirement ($)</label><input autocomplete="off" id="annual-expenses" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="50000"/></div>
+<div><label>Safe Withdrawal Rate (%)</label><input id="safe-rate" max="10" min="1" step="0.1" type="number" value="4"/></div>
+</div>
+<div class="form-row form-row-2">
+<div><label>Expected Annual Return (%)</label><input id="return-rate" max="15" min="1" step="0.1" type="number" value="7"/></div>
+<div><label>Current Savings ($)</label><input autocomplete="off" id="current-savings" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="50000"/></div>
+</div>
+</div>
+</div>
+<div id="result">
+<div class="result-box">
+<h4>Your Coast FIRE Number</h4>
+<div class="result-big" id="coast-number">$310,286</div>
+</div>
+<div class="stats-row">
+<div class="stat"><div class="stat-val" id="retire-number">$1,250,000</div><div class="stat-lbl">Full FIRE Target</div></div>
+<div class="stat"><div class="stat-val" id="gap-num">$260,286</div><div class="stat-lbl">Gap</div></div>
+<div class="stat"><div class="stat-val" id="coast-age">44</div><div class="stat-lbl">Coast Age</div></div>
+<div class="stat"><div class="stat-val" id="years-left">35</div><div class="stat-lbl">Years to Retire</div></div>
+</div>
+<div class="result-box">
+<h4>Status</h4>
+<div class="result-big" id="status-text" style="font-size:18px;">Keep going — you've got ground to cover</div>
+</div>
+</div>
 
-    <div class="calc-card">
-      <div class="form-grid">
-        <div class="form-row form-row-2">
-          <div><label>Current Age</label><input type="number" id="current-age" value="30" min="18" max="80"></div>
-          <div><label>Target Retirement Age</label><input type="number" id="retire-age" value="65" min="30" max="90"></div>
-        </div>
-        <div class="form-row form-row-2">
-          <div><label>Annual Expenses in Retirement ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="annual-expenses" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="50000" min="1000"></div>
-          <div><label>Safe Withdrawal Rate (%)</label><input type="number" id="safe-rate" value="4" min="1" max="10" step="0.1"></div>
-        </div>
-        <div class="form-row form-row-2">
-          <div><label>Expected Annual Return (%)</label><input type="number" id="return-rate" value="7" min="1" max="15" step="0.1"></div>
-          <div><label>Current Savings ($)</label><input type="text" inputmode="numeric" pattern="[0-9,]*" id="current-savings" oninput="formatComma(this)" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" autocomplete="off" value="50000" min="0"></div>
-        </div>
-      </div>
-    </div>
-
-    <div id="result">
-      <div class="result-box">
-        <h4>Your Coast FIRE Number</h4>
-        <div class="result-big" id="coast-number">$310,286</div>
-      </div>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-val" id="retire-number">$1,250,000</div><div class="stat-lbl">Full FIRE Target</div></div>
-        <div class="stat"><div class="stat-val" id="gap-num">$260,286</div><div class="stat-lbl">Gap</div></div>
-        <div class="stat"><div class="stat-val" id="coast-age">44</div><div class="stat-lbl">Coast Age</div></div>
-        <div class="stat"><div class="stat-val" id="years-left">35</div><div class="stat-lbl">Years to Retire</div></div>
-      </div>
-      <div class="result-box">
-        <h4>Status</h4>
-        <div class="result-big" id="status-text" style="font-size:18px;">Keep going — you've got ground to cover</div>
-      </div>
-    </div>
-
-    <div class="ad-slot"><p>Advertisement</p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
-
-    <h2 class="section-h2">How it works</h2>
-    <p class="section-p">The math is straightforward. Your Coast FIRE number is the amount you need invested today so that it grows to your full retirement target by your planned retirement age — with no further contributions.</p>
-    <div class="formula">Coast FIRE Number = Full FIRE Target ÷ (1 + r)<sup>years-to-retirement</sup></div>
-    <p class="section-p">Example: $1,250,000 ÷ 1.07<sup>35</sup> = $310,286. At that amount, compound growth alone carries you the rest of the way.</p>
-
-    <div class="callout callout-blue">
-      <h4>Social Security is not included</h4>
-      <p>This calculator uses your full annual expenses. If you expect Social Security income, your actual portfolio target may be lower. Check your estimate at ssa.gov/my-account.</p>
-    </div>
-
-    <div class="cards-grid">
-      <a href="https://coastfirewhen.com/coast-fire-calculator-explained.html" class="mini-card">Coast FIRE Guide →</a>
-      <a href="https://coastfirewhen.com/fire-progress-tracker.html" class="mini-card">FIRE Progress Tracker →</a>
-      <a href="https://coastfirewhen.com/safe-withdrawal-rate-guide.html" class="mini-card">Withdrawal Rate →</a>
-    </div>
-    <p class="disclaimer">For educational purposes only. Assumes constant returns, no Social Security income. Not financial advice.</p>
-  </div>
-  <script>
+<h2 class="section-h2">How it works</h2>
+<p class="section-p">The math is straightforward. Your Coast FIRE number is the amount you need invested today so that it grows to your full retirement target by your planned retirement age — with no further contributions.</p>
+<div class="formula">Coast FIRE Number = Full FIRE Target ÷ (1 + r)<sup>years-to-retirement</sup></div>
+<p class="section-p">Example: $1,250,000 ÷ 1.07<sup>35</sup> = $310,286. At that amount, compound growth alone carries you the rest of the way.</p>
+<div class="callout callout-blue">
+<h4>Social Security is not included</h4>
+<p>This calculator uses your full annual expenses. If you expect Social Security income, your actual portfolio target may be lower. Check your estimate at ssa.gov/my-account.</p>
+</div>
+<div class="cards-grid">
+<a class="mini-card" href="https://coastfirewhen.com/coast-fire-calculator-explained.html">Coast FIRE Guide →</a>
+<a class="mini-card" href="https://coastfirewhen.com/fire-progress-tracker.html">FIRE Progress Tracker →</a>
+<a class="mini-card" href="https://coastfirewhen.com/safe-withdrawal-rate-guide.html">Withdrawal Rate →</a>
+</div>
+<p class="disclaimer">For educational purposes only. Assumes constant returns, no Social Security income. Not financial advice.</p>
+</div><div class="ad-sidebar"><div class="ad-slot"><ins class="adsbygoogle" data-ad-client="ca-pub-XXXXXXXXXX" data-ad-format="auto" data-ad-slot="XXXXXXXXXX" data-full-width-responsive="true" style="display:block"></ins></div></div></div>
+<script>
     const el=id=>document.getElementById(id);
     const fmt=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
     
@@ -104,13 +99,13 @@ function calc(){
     ['current-age','retire-age','annual-expenses','safe-rate','return-rate','current-savings'].forEach(id=>el(id).addEventListener('input',calc));
     calc();
   </script>
-<meta property="og:title" content="Coast FIRE Calculator – CalcClear">
-<meta property="og:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coast FIRE Calculator – CalcClear">
-<meta name="twitter:description" content="Find the exact amount you need invested to coast to full retirement with zero additional savings.">
-  <style>
+<meta content="Coast FIRE Calculator – CalcClear" property="og:title"/>
+<meta content="Find the exact amount you need invested to coast to full retirement with zero additional savings." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Coast FIRE Calculator – CalcClear" name="twitter:title"/>
+<meta content="Find the exact amount you need invested to coast to full retirement with zero additional savings." name="twitter:description"/>
+<style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;510;590&display=swap');
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{--bg:#08090a;--bg-panel:#0f1011;--bg-surface:#191a1b;--bg-hover:#28282c;--text-primary:#f7f8f8;--text-secondary:#d0d6e0;--text-tertiary:#8a8f98;--text-muted:#62666d;--accent:#5e6ad2;--accent-hover:#7170ff;--accent-light:#828fff;--success:#10b981;--border:rgba(255,255,255,0.08);--border-subtle:rgba(255,255,255,0.05);--border-solid:#23252a;--font:'Inter',system-ui,sans-serif;}
@@ -123,7 +118,7 @@ function calc(){
     .nav-links{display:flex;align-items:center;gap:2px;}
     .nav-links a{font-size:14px;font-weight:510;color:var(--text-tertiary);padding:6px 10px;border-radius:6px;transition:background .15s,color .15s;}
     .nav-links a:hover{background:rgba(255,255,255,0.04);color:var(--text-secondary);}
-    .page-content{max-width:720px;margin:0 auto;padding:40px 24px 80px;}
+    
     .page-h1{font-size:32px;font-weight:510;letter-spacing:-.025em;color:var(--text-primary);margin-bottom:12px;line-height:1.1;}
     .intro-box{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin:20px 0 28px;}
     .intro-box p{font-size:16px;font-weight:300;line-height:1.65;color:var(--text-secondary);margin:0;}
@@ -177,13 +172,14 @@ function calc(){
     .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:6px;font-size:14px;font-weight:510;cursor:pointer;transition:all .15s;border:none;}
     .btn-primary{background:var(--accent);color:#fff;}.btn-primary:hover{background:var(--accent-hover);color:#fff;}
     .btn-ghost{background:rgba(255,255,255,0.03);color:var(--text-secondary);border:1px solid var(--border);}.btn-ghost:hover{background:rgba(255,255,255,0.07);color:var(--text-primary);}
-    .ad-slot{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:16px;margin:24px 0;text-align:center;}
+    
     .ad-slot p{font-size:11px;color:var(--text-muted);margin-bottom:8px;}
-  </style>
+    .ad-slot{min-height:600px}
+    .page-wrapper{display:flex;gap:32px;align-items:flex-start;max-width:960px;margin:0 auto;padding:40px 24px 80px}.ad-sidebar{width:160px;flex-shrink:0;position:sticky;top:72px}@media(max-width:900px){.page-wrapper{display:block;padding:40px 24px 80px}.ad-sidebar{width:100%;position:static;margin-top:32px}}
+    .page-content{flex:1;min-width:0}</style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/" class="nav-logo">Calc<span>Clear</span></a><div class="nav-links"><a href="/">All Calculators</a></div></div></nav>
-  
-<footer><p>© 2025 CalcClear.com — Educational use only. Not financial advice.</p><div class="footer-links"><a href="https://coastfirewhen.com/privacy-policy.html">Privacy Policy</a><a href="https://coastfirewhen.com/terms.html">Terms</a></div></footer>
+<nav><div class="nav-inner"><a class="nav-logo" href="/">Calc<span>Clear</span></a><div class="nav-links"><a href="/">All Calculators</a></div></div></nav>
+<footer><p>© 2026 CalcClear.com — Educational use only. Not financial advice.</p><div class="footer-links"><a href="https://coastfirewhen.com/privacy-policy.html">Privacy Policy</a><a href="https://coastfirewhen.com/terms.html">Terms</a></div></footer>
 </body>
 </html>
