@@ -102,7 +102,7 @@
 <h2>Estate Details</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Gross Estate Value ($)</label><input autocomplete="off" id="p-estate" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="500000"/></div>
+<div><label>Gross Estate Value ($)</label><input autocomplete="off" id="p-estate" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="500000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
 <div><label>State</label>
 <select id="p-state" style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
 <option value="CA">California</option>

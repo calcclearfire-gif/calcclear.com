@@ -95,8 +95,8 @@
 <h2>HELOC Details</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Credit Limit ($)</label><input autocomplete="off" id="h-limit" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="50000"/></div>
-<div><label>Current Balance ($)</label><input autocomplete="off" id="h-balance" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="0"/></div>
+<div><label>Credit Limit ($)</label><input autocomplete="off" id="h-limit" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="50000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
+<div><label>Current Balance ($)</label><input autocomplete="off" id="h-balance" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="0" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
 </div>
 <div class="form-row form-row-3">
 <div><label>Draw Period (years)</label><input id="h-draw-years" max="30" min="1" type="number" value="10"/></div>

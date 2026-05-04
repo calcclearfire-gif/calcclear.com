@@ -102,8 +102,8 @@
 <h2>Loan Details</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Purchase Price ($)</label><input autocomplete="off" id="ll-price" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="100000"/></div>
-<div><label>Down Payment ($)</label><input autocomplete="off" id="ll-down" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" oninput="formatComma(this)" pattern="[0-9,]*" type="text" value="20000"/></div>
+<div><label>Purchase Price ($)</label><input autocomplete="off" id="ll-price" inputmode="numeric" min="1000" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="100000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
+<div><label>Down Payment ($)</label><input autocomplete="off" id="ll-down" inputmode="numeric" min="0" onblur="if(this.value){this.value=Number(this.value.replace(/,/g,'')).toLocaleString('en-US')}" pattern="[0-9,]*" type="text" value="20000" onfocus="if(this.value)this.value=this.value.replace(/,/g,\'\')"/></div>
 </div>
 <div class="form-row form-row-3">
 <div><label>Annual Interest Rate (%)</label><input id="ll-rate" max="25" min="0.1" step="0.1" type="number" value="7.5"/></div>
