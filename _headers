@@ -6,3 +6,6 @@
 
 /robots.txt
   Content-Type: text/plain
+
+/security.txt
+  Content-Type: text/plain
