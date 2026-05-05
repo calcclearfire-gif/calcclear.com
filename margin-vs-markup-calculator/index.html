@@ -105,7 +105,7 @@
 <div class="calc-card">
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label id="lbl-cost">Cost ($)</label><input autocomplete="off" id="m-cost" min="0.01" value="50" type="number"/></div>
+<div><label id="lbl-cost">Cost ($)</label><input autocomplete="off" id="m-cost" min="0.01" value="50" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 <div><label id="lbl-pct">Desired Margin (%)</label><input id="m-pct" max="99.9" min="0.1" type="number" value="40"/></div>
 </div>
 </div>
@@ -142,8 +142,9 @@
   
   
 
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
 function calc(){
-      const cost=el("m-cost").valueAsNumber||0;
+      const cost=fmtNums(el("m-cost").value)||0;
       const pct=+el('m-pct').value||0;
       let selling=0,profit=0,margin=0,markup=0;
       if(mode==='margin'){

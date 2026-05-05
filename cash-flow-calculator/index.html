@@ -107,12 +107,12 @@
 <h2>Monthly Income</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Salary / Primary Income</label><input autocomplete="off" id="p-salary" min="0" value="6000" type="number"/></div>
-<div><label>Side Income / Freelance</label><input autocomplete="off" id="p-side" min="0" value="0" type="number"/></div>
+<div><label>Salary / Primary Income</label><input autocomplete="off" id="p-salary" min="0" value="6000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Side Income / Freelance</label><input autocomplete="off" id="p-side" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Passive Income (dividends, rental)</label><input autocomplete="off" id="p-passive" min="0" value="0" type="number"/></div>
-<div><label>Other Income</label><input autocomplete="off" id="p-other-inc" min="0" value="0" type="number"/></div>
+<div><label>Passive Income (dividends, rental)</label><input autocomplete="off" id="p-passive" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Income</label><input autocomplete="off" id="p-other-inc" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -120,20 +120,20 @@
 <h2>Monthly Expenses</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Housing (rent / mortgage)</label><input autocomplete="off" id="p-housing" min="0" value="1800" type="number"/></div>
-<div><label>Utilities (electric, gas, internet)</label><input autocomplete="off" id="p-utilities" min="0" value="200" type="number"/></div>
+<div><label>Housing (rent / mortgage)</label><input autocomplete="off" id="p-housing" min="0" value="1800" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Utilities (electric, gas, internet)</label><input autocomplete="off" id="p-utilities" min="0" value="200" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Groceries &amp; Dining</label><input autocomplete="off" id="p-groceries" min="0" value="600" type="number"/></div>
-<div><label>Transportation</label><input autocomplete="off" id="p-transport" min="0" value="500" type="number"/></div>
+<div><label>Groceries &amp; Dining</label><input autocomplete="off" id="p-groceries" min="0" value="600" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Transportation</label><input autocomplete="off" id="p-transport" min="0" value="500" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Insurance (health, auto, life)</label><input autocomplete="off" id="p-insurance" min="0" value="300" type="number"/></div>
-<div><label>Debt Payments (student, car)</label><input autocomplete="off" id="p-debt" min="0" value="400" type="number"/></div>
+<div><label>Insurance (health, auto, life)</label><input autocomplete="off" id="p-insurance" min="0" value="300" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Debt Payments (student, car)</label><input autocomplete="off" id="p-debt" min="0" value="400" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Subscriptions (streaming, apps)</label><input autocomplete="off" id="p-subs" min="0" value="150" type="number"/></div>
-<div><label>Other Expenses</label><input autocomplete="off" id="p-other-exp" min="0" value="200" type="number"/></div>
+<div><label>Subscriptions (streaming, apps)</label><input autocomplete="off" id="p-subs" min="0" value="150" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Expenses</label><input autocomplete="off" id="p-other-exp" min="0" value="200" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -144,8 +144,8 @@
 <h2>Monthly Business Income</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Total Revenue / Sales</label><input autocomplete="off" id="b-revenue" min="0" value="25000" type="number"/></div>
-<div><label>Other Business Income</label><input autocomplete="off" id="b-other-inc" min="0" value="0" type="number"/></div>
+<div><label>Total Revenue / Sales</label><input autocomplete="off" id="b-revenue" min="0" value="25000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Business Income</label><input autocomplete="off" id="b-other-inc" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -153,20 +153,20 @@
 <h2>Monthly Business Expenses</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Cost of Goods Sold (COGS)</label><input autocomplete="off" id="b-cogs" min="0" value="10000" type="number"/></div>
-<div><label>Payroll / Wages</label><input autocomplete="off" id="b-payroll" min="0" value="5000" type="number"/></div>
+<div><label>Cost of Goods Sold (COGS)</label><input autocomplete="off" id="b-cogs" min="0" value="10000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Payroll / Wages</label><input autocomplete="off" id="b-payroll" min="0" value="5000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Office / Workspace Rent</label><input autocomplete="off" id="b-rent" min="0" value="1500" type="number"/></div>
-<div><label>Marketing &amp; Advertising</label><input autocomplete="off" id="b-marketing" min="0" value="1000" type="number"/></div>
+<div><label>Office / Workspace Rent</label><input autocomplete="off" id="b-rent" min="0" value="1500" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Marketing &amp; Advertising</label><input autocomplete="off" id="b-marketing" min="0" value="1000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Software &amp; Subscriptions</label><input autocomplete="off" id="b-software" min="0" value="500" type="number"/></div>
-<div><label>Utilities &amp; Operations</label><input autocomplete="off" id="b-utilities" min="0" value="300" type="number"/></div>
+<div><label>Software &amp; Subscriptions</label><input autocomplete="off" id="b-software" min="0" value="500" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Utilities &amp; Operations</label><input autocomplete="off" id="b-utilities" min="0" value="300" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Taxes &amp; Licenses</label><input autocomplete="off" id="b-taxes" min="0" value="1000" type="number"/></div>
-<div><label>Other Expenses</label><input autocomplete="off" id="b-other-exp" min="0" value="500" type="number"/></div>
+<div><label>Taxes &amp; Licenses</label><input autocomplete="off" id="b-taxes" min="0" value="1000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Expenses</label><input autocomplete="off" id="b-other-exp" min="0" value="500" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -177,8 +177,8 @@
 <h2>Rental Income</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Monthly Rent Received</label><input autocomplete="off" id="r-rent" min="0" value="2000" type="number"/></div>
-<div><label>Other Income (laundry, parking)</label><input autocomplete="off" id="r-other-inc" min="0" value="0" type="number"/></div>
+<div><label>Monthly Rent Received</label><input autocomplete="off" id="r-rent" min="0" value="2000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Income (laundry, parking)</label><input autocomplete="off" id="r-other-inc" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -186,20 +186,20 @@
 <h2>Monthly Expenses</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Mortgage Payment (P&amp;I)</label><input autocomplete="off" id="r-mortgage" min="0" value="1200" type="number"/></div>
-<div><label>Property Tax (monthly portion)</label><input autocomplete="off" id="r-tax" min="0" value="200" type="number"/></div>
+<div><label>Mortgage Payment (P&amp;I)</label><input autocomplete="off" id="r-mortgage" min="0" value="1200" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Property Tax (monthly portion)</label><input autocomplete="off" id="r-tax" min="0" value="200" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Property Insurance</label><input autocomplete="off" id="r-insurance" min="0" value="150" type="number"/></div>
-<div><label>HOA Fees</label><input autocomplete="off" id="r-hoa" min="0" value="0" type="number"/></div>
+<div><label>Property Insurance</label><input autocomplete="off" id="r-insurance" min="0" value="150" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>HOA Fees</label><input autocomplete="off" id="r-hoa" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Maintenance &amp; Repairs</label><input autocomplete="off" id="r-maintenance" min="0" value="150" type="number"/></div>
-<div><label>Vacancy Allowance</label><input autocomplete="off" id="r-vacancy" min="0" value="100" type="number"/></div>
+<div><label>Maintenance &amp; Repairs</label><input autocomplete="off" id="r-maintenance" min="0" value="150" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Vacancy Allowance</label><input autocomplete="off" id="r-vacancy" min="0" value="100" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-2">
-<div><label>Property Management Fee</label><input autocomplete="off" id="r-pm" min="0" value="0" type="number"/></div>
-<div><label>Other Expenses</label><input autocomplete="off" id="r-other-exp" min="0" value="50" type="number"/></div>
+<div><label>Property Management Fee</label><input autocomplete="off" id="r-pm" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Other Expenses</label><input autocomplete="off" id="r-other-exp" min="0" value="50" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 </div>
 </div>
@@ -243,6 +243,7 @@
   
   
 
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
 function calc(){
       const mode=document.querySelector('.tab-btn.active')?.textContent.trim().toLowerCase();
       let income=0,expenses=0;

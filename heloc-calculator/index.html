@@ -95,8 +95,8 @@
 <h2>HELOC Details</h2>
 <div class="form-grid">
 <div class="form-row form-row-2">
-<div><label>Credit Limit ($)</label><input autocomplete="off" id="h-limit" min="1000" value="50000" type="number"/></div>
-<div><label>Current Balance ($)</label><input autocomplete="off" id="h-balance" min="0" value="0" type="number"/></div>
+<div><label>Credit Limit ($)</label><input autocomplete="off" id="h-limit" min="1000" value="50000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
+<div><label>Current Balance ($)</label><input autocomplete="off" id="h-balance" min="0" value="0" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var v=this.value.replace(/[^0-9]/g,'');if(v||v==='0')this.value=Number(v).toLocaleString('en-US');" onblur="if(this.value)this.value=Number(this.value.replace(/[^0-9]/g,'')).toLocaleString('en-US')"/></div>
 </div>
 <div class="form-row form-row-3">
 <div><label>Draw Period (years)</label><input id="h-draw-years" max="30" min="1" type="number" value="10"/></div>
@@ -149,9 +149,10 @@
   
   
 
+  function fmtNums(v){return parseFloat((v||'0').replace(/,/g,''))||0;}
 function calc(){
-      const limit=el("h-limit").valueAsNumber||50000;
-      const bal=el("h-balance").valueAsNumber||0;
+      const limit=fmtNums(el("h-limit").value)||50000;
+      const bal=fmtNums(el("h-balance").value)||0;
       const drawYears=+el('h-draw-years').value||10;
       const repayYears=+el('h-repay-years').value||20;
       const ioYears=Math.min(+el('h-io-years').value||5,drawYears);
