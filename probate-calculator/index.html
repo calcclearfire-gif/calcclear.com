@@ -44,13 +44,14 @@
     .intro-box p{font-size:16px;font-weight:300;line-height:1.65;color:var(--text-secondary);margin:0;}
     label{display:block;font-size:13px;font-weight:510;color:var(--text-tertiary);margin-bottom:6px;letter-spacing:.01em;}
     
-    input[type="text"]{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text-primary);font-size:15px;font-family:var(--font);outline:none;transition:border-color .15s}
+    input[type="text"]{width:100%;max-width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text-primary);font-size:15px;font-family:var(--font);outline:none;transition:border-color .15s}
     input[type="text"]:focus{border-color:var(--accent)}
     input[type="text"]::placeholder{color:var(--text-muted)}
-    input[type="number"]{width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text-primary);font-size:15px;font-family:var(--font);outline:none;transition:border-color .15s;}
+    input[type="number"]{width:100%;max-width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:6px;padding:10px 14px;color:var(--text-primary);font-size:15px;font-family:var(--font);outline:none;transition:border-color .15s;}
     input[type="number"]:focus{border-color:var(--accent);}input[type="number"]::placeholder{color:var(--text-muted);}
     .form-grid{display:grid;gap:16px;}
     .form-row{display:grid;gap:12px;}
+    .form-row > div{min-width:0;}
     .form-row-2{grid-template-columns:1fr 1fr;}.form-row-3{grid-template-columns:1fr 1fr 1fr;}
     @media(max-width:600px){.form-row-2,.form-row-3{grid-template-columns:1fr;}}
     .calc-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:26px;margin:24px 0;}
@@ -152,7 +153,7 @@
 <div class="form-row form-row-2">
 <div><label>Gross Estate Value ($)</label><input autocomplete="off" id="p-estate" min="0" value="500000" type="text" inputmode="numeric" pattern="[0-9,]*" oninput="var p=this.selectionStart,d=this.value.replace(/[^0-9]/g,''),v=d?Number(d).toLocaleString('en-US'):'';this.value=v;this.setSelectionRange(p+(v.length-d.length),p+(v.length-d.length));" onblur="var d=this.value.replace(/[^0-9]/g,'');if(d)this.value=Number(d).toLocaleString('en-US');"/></div>
 <div><label>State</label>
-<select id="p-state" style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
+<select id="p-state" style="width:100%;max-width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
 <option value="CA">California</option>
 <option value="TX">Texas</option>
 <option value="FL">Florida</option>
@@ -209,14 +210,14 @@
 </div>
 <div class="form-row form-row-2">
 <div><label>Will Present? <span style="font-weight:300;color:#8a8f98;font-size:12px;">(contested wills take longer)</span></label>
-<select id="p-will" style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
+<select id="p-will" style="width:100%;max-width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
 <option value="yes">Yes, probated will</option>
 <option value="no">No will (intestate)</option>
 <option value="contested">Will may be contested</option>
 </select>
 </div>
 <div><label>Estate Type</label>
-<select id="p-type" style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
+<select id="p-type" style="width:100%;max-width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px 14px;color:#f7f8f8;font-size:15px;font-family:'Inter',system-ui,sans-serif;outline:none;">
 <option value="independent">Independent Administration</option>
 <option value="dependent">Dependent Administration</option>
 <option value="small">Small Estate (expedited)</option>
