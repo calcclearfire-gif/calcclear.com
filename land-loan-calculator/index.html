@@ -101,11 +101,14 @@
 
 .nav-active{color:var(--accent)!important}
 
+    .context-section{max-width:960px;margin:0 auto;padding:48px 24px;border-top:1px solid var(--border-subtle);background:rgba(255,255,255,0.01)}
     .context-section h2{font-size:22px;font-weight:590;margin:40px 0 12px;color:var(--text-primary);line-height:1.3}
+    .context-section h2:first-child{margin-top:0}
     .context-section h3{font-size:16px;font-weight:510;margin:28px 0 8px;color:var(--text-secondary);line-height:1.4}
     .context-section p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0 0 12px}
   
-    .privacy-note{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(94,106,210,0.08);border:1px solid rgba(94,106,210,0.2);border-radius:8px;font-size:13px;color:var(--text-secondary);margin-bottom:16px}
+    .privacy-note{max-width:960px;margin:24px auto 0;box-sizing:border-box}
+    .privacy-note{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(94,106,210,0.08);border:1px solid rgba(94,106,210,0.2);border-radius:8px;font-size:13px;color:var(--text-secondary)}
     .privacy-note svg{width:16px;height:16px;flex-shrink:0;color:var(--accent)}
   
     footer .footer-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:8px}
@@ -114,7 +117,7 @@
     footer .footer-nav span{color:var(--text-muted)}
     footer .footer-copy{display:block;text-align:center}
   
-    footer{margin-top:48px;padding:24px 0;border-top:1px solid var(--border);text-align:center}
+    footer{max-width:960px;margin:24px auto 0;padding:24px 24px;border-top:1px solid var(--border-subtle);text-align:center;box-sizing:border-box}
     footer p{font-size:13px;color:var(--text-muted);margin:0}
     footer .footer-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:8px}
     footer .footer-nav a{font-size:13px;color:var(--text-muted);text-decoration:none}
@@ -229,6 +232,43 @@ function calc(){
     ['ll-price','ll-down','ll-rate','ll-term','ll-balloon'].forEach(id=>el(id).addEventListener('input',calc));
     calc();
   </script>
-<footer><p>© 2026 CalcClear.com — Educational use only. Not financial advice.</p>
+<footer>
+<div style="max-width:700px;margin:0 auto;text-align:left;">
+<section style="margin-bottom:32px;">
+<h2 style="font-size:18px;font-weight:590;color:#f7f8f8;margin:0 0 12px;letter-spacing:-.01em;">Understanding Land Loans: Raw Land vs. Lot Loans vs. Construction Loans</h2>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">Not all land financing is the same. Lenders categorize land loans into three main types, each with distinct risk profiles and lending terms. A <strong>raw land loan</strong> finances unimproved property with no utilities, roads, or structures — the riskiest category for lenders and therefore the most expensive for borrowers. A <strong>lot loan</strong> applies to land that has been improved or is in a developed area, sometimes with basic utilities accessible. A <strong>construction loan</strong> finances the building process itself, typically converting to a permanent mortgage once construction is complete.</p>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0;">The key distinction is collateral and exit strategy. Raw land has no structures to secure the loan, making foreclosure less attractive to lenders. Lot loans carry slightly better terms because the land is more marketable. Construction loans are ultimately backed by the finished home, which aligns lender and borrower incentives more closely.</p>
+</section>
+<section style="margin-bottom:32px;">
+<h3 style="font-size:15px;font-weight:510;color:#d0d6e0;margin:0 0 10px;">Typical Down Payments: 20% to 50%</h3>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">Land loans typically require down payments ranging from <strong>20% to 50%</strong> of the purchase price, compared to 3% to 20% for conventional mortgages. The exact requirement depends on whether the land is raw or improved, the loan term, and your credit profile. Expect to put more money down if you are financing raw land with a shorter loan term — some lenders require 30% to 50% down for unimproved property.</p>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0;">Higher down payments reduce the lender&rsquo;s risk exposure and can help you secure a lower interest rate. If you cannot meet the minimum down payment, you may need to explore seller financing, local community land trust programs, or owner-carried notes.</p>
+</section>
+<section style="margin-bottom:32px;">
+<h3 style="font-size:15px;font-weight:510;color:#d0d6e0;margin:0 0 10px;">Interest Rates: Higher Than Building Loans</h3>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">Land loan interest rates typically run <strong>1% to 4% higher</strong> than conventional mortgage rates. As of recent market conditions, raw land loans often carry rates in the 7% to 10% range, while construction-to-permanent loans may be available in the 5% to 7% range. The gap exists because land loans carry more risk in the lender&rsquo;s eyes — there is no tangible improvement to recover in a foreclosure, and raw land can sit vacant for years.</p>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0;">Construction loans frequently offer better rates because the finished home serves as collateral and the borrower&rsquo;s exit strategy (permanent financing or sale) is clearer. If your long-term plan includes building a home, a construction-to-permanent loan may be more cost-effective than financing the land separately and then refinancing later.</p>
+</section>
+<section style="margin-bottom:32px;">
+<h3 style="font-size:15px;font-weight:510;color:#d0d6e0;margin:0 0 10px;">Amortization Schedules and Balloon Payments</h3>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">Most land loans are structured with <strong>terms of 5 to 15 years</strong>, which is significantly shorter than the 15- to 30-year terms common for mortgages. The amortization schedule — the schedule of monthly payments designed to pay off the loan over its term — often does not fully repay the principal by the end of the term. This creates a <strong>balloon payment</strong>: the remaining balance due in full when the loan matures.</p>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">For example, a 5-year land loan on a $100,000 balance may amortize over 20 years, meaning your monthly payment covers interest and a small amount of principal as if you were paying it off over two decades. But because the loan matures in 5 years, the bulk of the $100,000 balance is still owed when the balloon payment comes due. Understanding your balloon balance before you sign is critical to avoiding a cash crunch at the worst possible time.</p>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0;">Some lenders offer fully amortizing land loans with terms up to 20 or 25 years, but these typically require larger down payments, strong credit, and improved property. Always ask the lender whether the loan is partially amortizing (with a balloon) or fully amortizing before committing.</p>
+</section>
+<section style="margin-bottom:32px;">
+<h3 style="font-size:15px;font-weight:510;color:#d0d6e0;margin:0 0 10px;">When Land Loans Make Sense</h3>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0 0 10px;">A land loan makes the most sense when you have a clear exit strategy and sufficient cash reserves to manage the higher costs. Specific scenarios where land financing may be appropriate include:</p>
+<ul style="font-size:14px;font-weight:300;line-height:1.8;color:#8a8f98;margin:0 0 10px;padding-left:18px;">
+<li>You are planning to build within 1 to 3 years and will use a construction loan or cash to pay off the land loan.</li>
+<li>You found a parcel at a significant discount and need financing to secure it before selling it for a profit.</li>
+<li>You have a well-established relationship with a local bank or credit union that offers favorable land loan terms.</li>
+<li>You are purchasing in a land trust or community land program that offers below-market financing.</li>
+<li>You have the liquidity to make large down payments and can absorb higher monthly costs without strain.</li>
+</ul>
+<p style="font-size:14px;font-weight:300;line-height:1.7;color:#8a8f98;margin:0;">Land loans are generally not advisable if you plan to hold the property long-term without building, if your credit profile limits your refinancing options, or if the balloon payment timeline does not align with your financial forecast. Calculate your total cost of financing — including interest, fees, and the balloon balance — before signing any loan agreement.</p>
+</section>
+</div>
+<p>© 2026 CalcClear.com — Educational use only. Not financial advice.</p>
+</footer>
 </body>
 </html>

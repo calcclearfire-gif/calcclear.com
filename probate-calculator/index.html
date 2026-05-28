@@ -101,11 +101,14 @@
 
 .nav-active{color:var(--accent)!important}
 
+    .context-section{max-width:960px;margin:0 auto;padding:48px 24px;border-top:1px solid var(--border-subtle);background:rgba(255,255,255,0.01)}
     .context-section h2{font-size:22px;font-weight:590;margin:40px 0 12px;color:var(--text-primary);line-height:1.3}
+    .context-section h2:first-child{margin-top:0}
     .context-section h3{font-size:16px;font-weight:510;margin:28px 0 8px;color:var(--text-secondary);line-height:1.4}
     .context-section p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0 0 12px}
   
-    .privacy-note{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(94,106,210,0.08);border:1px solid rgba(94,106,210,0.2);border-radius:8px;font-size:13px;color:var(--text-secondary);margin-bottom:16px}
+    .privacy-note{max-width:960px;margin:24px auto 0;box-sizing:border-box}
+    .privacy-note{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(94,106,210,0.08);border:1px solid rgba(94,106,210,0.2);border-radius:8px;font-size:13px;color:var(--text-secondary)}
     .privacy-note svg{width:16px;height:16px;flex-shrink:0;color:var(--accent)}
   
     footer .footer-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:8px}
@@ -114,7 +117,7 @@
     footer .footer-nav span{color:var(--text-muted)}
     footer .footer-copy{display:block;text-align:center}
   
-    footer{margin-top:48px;padding:24px 0;border-top:1px solid var(--border);text-align:center}
+    footer{max-width:960px;margin:24px auto 0;padding:24px 24px;border-top:1px solid var(--border-subtle);text-align:center;box-sizing:border-box}
     footer p{font-size:13px;color:var(--text-muted);margin:0}
     footer .footer-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:8px}
     footer .footer-nav a{font-size:13px;color:var(--text-muted);text-decoration:none}
@@ -309,6 +312,28 @@ function calc(){
     el('p-type').addEventListener('change',calc);
     calc();
   </script>
+<div class="context-section" style="margin-top:48px;border-top:1px solid var(--border);padding-top:32px;">
+<h2>What Is Probate and Why Does It Matter?</h2>
+<p class="section-p">Probate is a court-supervised legal process that validates a deceased person&apos;s will, settles outstanding debts, and distributes remaining assets to rightful beneficiaries. If the deceased owned property, financial accounts, or other significant assets solely in their name, those assets typically must pass through probate before reaching heirs. The process ensures that creditors are paid, taxes are settled, and assets are transferred legally &mdash; not according to whoever happens to grab them first.</p>
+<p class="section-p">Not all assets go through probate. Jointly owned property with a right of survivorship, accounts designated with a transfer-on-death (TOD) or payable-on-death (POD) beneficiary, life insurance proceeds with named beneficiaries, and assets held in a living trust all bypass the probate court entirely. Knowing which assets fall outside probate can significantly streamline estate settlement.</p>
+
+<h2>Typical Probate Timeline: 6 Months to 2+ Years</h2>
+<p class="section-p">The duration of probate varies widely depending on estate complexity, state law, and whether disputes arise. A straightforward estate with a valid will and no creditors may conclude in as little as 6&ndash;9 months in many states. More commonly, probate takes 12&ndash;18 months. Contested estates, large or heavily indebted estates, and those requiring formal court administration can stretch to 2&ndash;3 years or longer.</p>
+<p class="section-p">Delays often stem from creditor notification periods (typically 3&ndash;6 months), waiting for asset appraisals, resolving beneficiary disputes, or navigating state-specific waiting periods before distributions can begin. Estates handled under small estate procedures can often be resolved in a matter of weeks.</p>
+
+<h2>Understanding Probate Fees</h2>
+<p class="section-p">Probate costs typically fall into four categories: attorney fees, executor or personal representative fees, court costs, and appraisal expenses. Attorney fees are usually the largest line item and may be charged as a flat fee (often $1,500&ndash;$5,000 for simple estates), an hourly rate ($200&ndash;$400 per hour is common), or a percentage of the estate value. Percentage-based fees in most states follow a tiered fee schedule similar to California&apos;s widely cited standard: 4% on the first $100,000, 3% on the next $100,000, 2% on the next $800,000, and declining percentages above that.</p>
+<p class="section-p">Executor fees are typically set by state statute and often mirror attorney fee schedules &mdash; meaning the executor receives the same percentage-based compensation as the attorney. Court filing fees vary significantly by state, ranging from under $200 to over $500. Appraisal costs depend on the estate&apos;s asset types; real property and business interests typically require licensed appraisers whose fees add to the total.</p>
+
+<h2>How State Laws Affect Probate</h2>
+<p class="section-p">Probate is governed primarily by state law, and rules vary considerably across the country. Some states, like Texas, offer independent administration, which allows executors to settle estates with minimal court involvement &mdash; reducing both time and cost. Other states require dependent administration, meaning every significant decision must be approved by the court, extending timelines and increasing legal expenses.</p>
+<p class="section-p">Small estate thresholds also differ dramatically. California treats estates under approximately $184,000 as small estates eligible for simplified procedures, while some states set thresholds as low as $25,000&ndash;$50,000. Community property states (California, Texas, Arizona, Nevada, New Mexico, Idaho, Louisiana, and Wisconsin) have additional rules about dividing marital assets that affect probate calculations.</p>
+
+<h2>Strategies to Minimize or Avoid Probate</h2>
+<p class="section-p">The most effective strategy for avoiding probate is placing assets into a properly funded living trust. A revocable living trust allows you to retain control of your assets during life while designating beneficiaries who receive assets outside of probate upon death &mdash; often within days, at a fraction of the cost.</p>
+<p class="section-p">Joint ownership with right of survivorship is another straightforward approach for real estate and some financial accounts. Adding a TOD or POD designation to bank accounts, brokerage accounts, and certain other assets routes those funds directly to named beneficiaries without court involvement. gifting assets before death can reduce the probate estate, though it may trigger gift tax implications above the annual exclusion amount ($18,000 per recipient in 2024).</p>
+<p class="section-p">For smaller estates, simply keeping total assets below your state&apos;s small estate threshold can qualify the estate for streamlined procedures. Reviewing beneficiary designations annually and ensuring titles, trusts, and wills are consistent also prevents assets from unexpectedly falling into probate.</p>
+</div>
 <footer><p>© 2026 CalcClear.com — Educational use only. Not financial advice.</p>
 </body>
 </html>
