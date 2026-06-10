@@ -31,6 +31,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://calcclear.com/ads.txt</loc>
+    <priority>0.1</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://calcclear.com/heloc-calculator/</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
